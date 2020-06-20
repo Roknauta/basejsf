@@ -5,14 +5,23 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
-   <h:head>
-      <title>Alguma coisa</title>
-   </h:head>
-<h:form>
-   <p:outputLabel value="Teste"/>
-   <p:inputText />
-</h:form>
+<ui:composition template="/layout/template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
+                    <p:outputLabel value="Máquina"/>
+                    <p:inputText value="#{baseJsfController.nome}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="1">
+                    <p:outputLabel value="#{msg['teste']}"/>
+                    <p:selectOneMenu value="#{baseJsfController.nome}" var="bean">
+                        <f:selectItem itemLabel="Primeiro"/>
+                        <f:selectItem itemLabel="Segundo"/>
+                    </p:selectOneMenu>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
 </html>

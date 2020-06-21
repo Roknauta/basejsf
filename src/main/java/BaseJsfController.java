@@ -2,6 +2,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.ResourceBundle;
 
 @Named
 @ViewScoped
@@ -11,7 +12,7 @@ public class BaseJsfController implements Serializable {
 
     @PostConstruct
     public void init(){
-        this.nome = "Douglas";
+        this.nome = obterChave("teste");
     }
 
     public String getNome() {
@@ -20,5 +21,10 @@ public class BaseJsfController implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String obterChave(String key){
+        ResourceBundle rb = ResourceBundle.getBundle("messages");
+        return rb.getString(key);
     }
 }

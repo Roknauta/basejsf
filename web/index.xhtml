@@ -10,15 +10,10 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:panelGrid columns="1">
-                    <p:outputLabel value="Máquina"/>
-                    <p:inputText value="#{baseJsfController.nome}"/>
-                </h:panelGrid>
-                <h:panelGrid columns="1">
-                    <p:outputLabel value="#{msg['teste']}"/>
-                    <p:selectOneMenu  var="bean">
-                        <f:selectItem itemLabel="Primeiro"/>
-                        <f:selectItem itemLabel="Segundo"/>
-                    </p:selectOneMenu>
+                    <p:outputLabel value="Input Text" for="nome"/>
+                    <p:inputText id="nome" value="#{baseJsfController.nome}"/>
+                    <p:commandButton value="Confirmar" update="resultado"/>
+                    <p:outputLabel id="resultado" value="#{baseJsfController.nome}"/>
                 </h:panelGrid>
             </h:panelGrid>
         </h:form>

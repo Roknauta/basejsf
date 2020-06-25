@@ -10,7 +10,7 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:panelGrid columns="1">
-                    <p:outputLabel value="Input Text" for="nome"/>
+                    <p:outputLabel value="#{msg['first']}" for="nome"/>
                     <p:inputText id="nome" value="#{baseJsfController.nome}"/>
                     <p:commandButton value="Confirmar" update="resultado"/>
                     <p:outputLabel id="resultado" value="#{baseJsfController.nome}"/>

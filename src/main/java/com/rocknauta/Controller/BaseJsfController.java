@@ -8,6 +8,7 @@ import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.*;
 
 @Named
@@ -20,7 +21,6 @@ public class BaseJsfController implements Serializable {
 
     @PostConstruct
     public void init(){
-
     }
 
     public String obterChave(String key){

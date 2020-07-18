@@ -4,12 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.annotation.PostConstruct;
-import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.util.*;
+import java.util.ResourceBundle;
 
 @Named
 @ViewScoped
@@ -26,6 +24,10 @@ public class BaseJsfController implements Serializable {
     public String obterChave(String key){
         ResourceBundle rb = ResourceBundle.getBundle("messages");
         return rb.getString(key);
+    }
+
+    public void teste(){
+        System.out.println("Teste");
     }
 
 }

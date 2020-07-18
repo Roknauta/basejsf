@@ -15,7 +15,16 @@
                     <p:commandButton value="Confirmar" update="resultado"/>
                     <p:outputLabel id="resultado" value="#{baseJsfController.nome}"/>
                 </h:panelGrid>
+                <h:panelGrid columns="1">
+                    <p:outputLabel value="#{msg['first']}" for="nome"/>
+                    <p:selectOneMenu>
+                        <p:column>
+                            <p:graphicImage library="images" name="countys/pt.jpg"/>
+                        </p:column>
+                    </p:selectOneMenu>
+                </h:panelGrid>
             </h:panelGrid>
+            <p:poll autoStart="true" listener="#{baseJsfController.teste}" interval="10"/>
         </h:form>
     </ui:define>
 </ui:composition>
